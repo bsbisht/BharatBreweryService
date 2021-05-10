@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.example.bharat.brewery.web.model.BeerDto;
+import com.example.bharat.brewery.web.model.BeerStyleEnum;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,12 +20,12 @@ public class BeerServiceImpl implements BeerService {
 	public BeerDto getBeer(UUID id) {
 		// TODO Auto-generated method stub
 		return BeerDto.builder().beerName("KingFisherUltra")
-				.id(UUID.randomUUID()).beerStyle("Lager").build();
+				.id(UUID.randomUUID()).beerStyle(BeerStyleEnum.ALE).build();
 	}
 
 	@Override
 	public BeerDto saveBeer(BeerDto beer) {
-		// TODO Auto-generated method stub
+		
 		BeerDto newBeer = BeerDto.builder().beerName(beer.getBeerName())
 				.beerStyle(beer.getBeerStyle())
 				.id(UUID.randomUUID())
